@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ramaje · Moxen</title>
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=general-sans@400,500,600&display=swap">
+<link rel="stylesheet" href="ramaje.css">
+<!-- ?tema=claro para verla sobre fondo claro -->
+<script>if (/[?&]tema=claro/.test(location.search)) document.documentElement.dataset.tema = 'claro';</script>
+</head>
+<body>
+  <!-- data-ramaje: el jardín. ramaje.js hace crecer un árbol fractal de
+      ramas curvas, con flores en las puntas, y lo mece con el viento -->
+  <main class="rm-escena" data-ramaje tabindex="0" aria-label="Árbol que crece. Intro para que vuelva a crecer">
+    <canvas class="rm-lienzo" aria-hidden="true"></canvas>
+    <p class="rm-pista">Mueve el cursor: eres el viento. Haz clic para que crezca otro árbol.</p>
+  </main>
+
+  <script src="ramaje.js"></script>
+  <script>Ramaje(document.querySelector('[data-ramaje]'));</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/* Ramaje · Moxen — los estilos del efecto y de la demostración. */
+:root {
+  --rm-fondo: #0a0a0a;
+  --rm-texto: #f4f4f4;
+  --rm-pista: rgba(255, 255, 255, .42);
+  /* lo que lee ramaje.js: el color de la madera y de las flores (r, g, b),
+     y cuánto se ve la luna de detrás */
+  --rm-rama: 244, 244, 244;
+  --rm-luna: .05;
+}
+:root[data-tema="claro"] {
+  --rm-fondo: #eeeeee;
+  --rm-texto: #0a0a0a;
+  --rm-pista: rgba(0, 0, 0, .45);
+  --rm-rama: 12, 12, 12;
+  --rm-luna: .055;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--rm-fondo); color: var(--rm-texto); overflow: hidden; }
+body { font-family: "General Sans", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+/* ── el efecto ─────────────────────────────────────────────────────── */
+/* touch-action: none para que el dedo sople sin desplazar la página */
+[data-ramaje] { position: relative; overflow: hidden; touch-action: none; outline: none; }
+.rm-lienzo { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+[data-ramaje]:focus-visible { box-shadow: inset 0 0 0 2px var(--rm-pista); }
+
+/* ── la demostración ───────────────────────────────────────────────── */
+.rm-escena { height: 100%; cursor: pointer; }
+.rm-pista {
+  position: absolute; left: 1rem; right: 1rem; bottom: 2.2rem; margin: 0; z-index: 2;
+  text-align: center; text-wrap: balance; color: var(--rm-pista); font-size: .95rem; pointer-events: none;
+}
